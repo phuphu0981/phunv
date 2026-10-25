@@ -248,6 +248,18 @@ export default function Gallery({ revealed = false, driftSpeed = 0 }) {
   );
 }
 
+// A real screenshot in a minimal browser window; the address bar shows the live host when there is one
+export function Browser({ item, shot, w }) {
+  return (
+    <figure className="browser">
+      <div className="browser-bar" aria-hidden="true">
+        <i /><i /><i /><span>{item.link ? new URL(item.link).host : 'localhost'}</span>
+      </div>
+      <img src={item.shot(shot, w)} alt={`${item.title} screenshot`} width="1440" height="900" />
+    </figure>
+  );
+}
+
 // Project detail dialog, shared by the gallery and the Lab list
 export function ProjectDetail({ item: raw, onClose }) {
   const { lang, t } = useLang();
@@ -275,7 +287,11 @@ export function ProjectDetail({ item: raw, onClose }) {
     >
       <button className="gx-close" onClick={close} aria-label={t.close} autoFocus>×</button>
       <article className="gx-detail">
-        <img src={item.src(1200)} alt="" />
+        {item.shots ? (
+          <div className="gx-shots">
+            {item.shots.map((s) => <Browser key={s} item={item} shot={s} w={1600} />)}
+          </div>
+        ) : <img src={item.src(1200)} alt="" />}
         <div className="gx-info">
           <p className="gx-kind">{item.kind} · {item.year}</p>
           <h2>{item.title}</h2>

@@ -109,7 +109,8 @@ export const UI = {
   },
 };
 
-// img: cover art slug in public/works/<img>-{400,640,1200}.webp
+// img: cover art slug in public/works/<img>-{400,640,1200}.webp (the gallery always uses it)
+// shots: real screenshots in public/shots/<shot>-{800,1600}.webp, 1440×900 viewport; first one leads
 export const PROJECTS = [
   {
     title: 'Oroca B2B Commerce', featured: true, flow: ['Headless storefront', 'GraphQL', 'Magento 2.4.8', 'MySQL queues', 'Indexers'], year: 2026, kind: 'Magenest · Magento 2', img: 'obsidian-flow',
@@ -249,10 +250,11 @@ export const PROJECTS = [
   },
   {
     title: 'Preme', link: 'https://kerrax.com', year: 2026, kind: 'Personal · Full stack', img: 'radiant-void',
+    shots: ['preme', 'preme-product'],
     summary: 'A personal project: a shop selling digital and AI accounts, built from backend to server.',
     points: [
       'Pulls products from several suppliers and hides any item that would sell at a loss.',
-      'Customers top up their wallet with USDT through Binance Pay.',
+      'Customers pay by bank QR code or top up their wallet with USDT through Binance Pay.',
       'Admin pages for orders and simple accounting reports.',
       'Runs on a self-managed server, with backup and restore steps written down.',
     ],
@@ -262,7 +264,7 @@ export const PROJECTS = [
       summary: 'Dự án cá nhân: shop bán tài khoản số và tài khoản AI, làm trọn từ backend đến server.',
       points: [
         'Lấy sản phẩm từ nhiều nhà cung cấp, tự ẩn món nào bán ra sẽ bị lỗ.',
-        'Khách nạp tiền vào ví bằng USDT qua Binance Pay.',
+        'Khách trả bằng mã QR ngân hàng hoặc nạp ví bằng USDT qua Binance Pay.',
         'Trang admin quản lý đơn hàng và báo cáo thu chi đơn giản.',
         'Chạy trên server riêng, có ghi lại các bước sao lưu và khôi phục.',
       ],
@@ -270,7 +272,6 @@ export const PROJECTS = [
   },
   {
     title: 'E-Learning LMS', year: 2026, kind: 'Personal · Laravel + AI', img: 'aurora-fold',
-    link: 'https://e-learningg.click/',
     summary: 'An online course site where AI dubs lessons and writes quizzes.',
     points: [
       'Split the code into 7 parts so each feature stays separate.',
@@ -291,7 +292,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'Opaline Gazette', year: 2026, kind: 'Personal · Go GraphQL', img: 'eternal-glow',
+    title: 'Opaline Gazette', year: 2026, kind: 'Personal · Go GraphQL', img: 'eternal-glow', shots: ['web360'],
     summary: 'A news site that collects articles from RSS feeds and is set up for Google search.',
     points: [
       'Go backend with a GraphQL API that loads data in batches to stay fast.',
@@ -310,7 +311,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'learnCode', year: 2026, kind: 'Personal · Online judge', img: 'echo-bloom',
+    title: 'learnCode', year: 2026, kind: 'Personal · Online judge', img: 'echo-bloom', shots: ['learncode-ide', 'learncode'],
     summary: 'A LeetCode-style site to practice coding problems.',
     points: [
       'Submitted code runs in a safe sandbox and is graded right away.',
@@ -327,7 +328,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'OpenDox', link: 'https://opendox.vercel.app/', year: 2026, kind: 'Personal · Document SaaS', img: 'solar-veil',
+    title: 'OpenDox', link: 'https://opendox.vercel.app/', year: 2026, kind: 'Personal · Document SaaS', img: 'solar-veil', shots: ['opendox'],
     summary: 'Translate documents, even scanned ones, and edit PDFs right in the browser.',
     points: [
       'Reads text from scanned pages and keeps the PDF or Word layout.',
@@ -364,7 +365,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'News Crawler', year: 2026, kind: 'Personal · Python', img: 'shadow-tide',
+    title: 'News Crawler', year: 2026, kind: 'Personal · Python', img: 'shadow-tide', shots: ['crawl'],
     link: 'https://crawvnnews.onrender.com',
     summary: 'Collects headlines from Vietnamese and German news sites in one place.',
     points: ['Reads VnExpress, Dân Trí, VietNamNet and Süddeutsche Zeitung.'],
@@ -377,7 +378,6 @@ export const PROJECTS = [
   },
   {
     title: 'CodeBaseGo', year: 2026, kind: 'Personal · Go template', img: 'celestial-drift',
-    link: 'https://code-base-go-eight.vercel.app',
     summary: 'A reusable Go starter project for new backends.',
     points: ['Add a new module with one command, and the docs explain how each request is handled.'],
     stack: ['Go', 'Gin', 'Wire', 'gqlgen'],
@@ -387,4 +387,4 @@ export const PROJECTS = [
       points: ['Thêm module mới chỉ bằng một lệnh, có tài liệu giải thích cách xử lý từng request.'],
     },
   },
-].map((p) => ({ ...p, src: (w) => `/works/${p.img}-${w}.webp` }));
+].map((p) => ({ ...p, src: (w) => `/works/${p.img}-${w}.webp`, shot: (s, w) => `/shots/${s}-${w}.webp` }));

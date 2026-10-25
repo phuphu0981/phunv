@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { ProjectDetail } from './Gallery';
+import { ProjectDetail, Browser } from './Gallery';
 import { PROFILE, TIMELINE, EXPERIENCE, SKILLS, PROJECTS } from './data';
 import { useLang, loc, Rich } from './lang';
 import { onFrame } from './scroll';
@@ -245,7 +245,7 @@ function Lab({ onOpen }) {
         </ul>
       </div>
       <div ref={preview} className={hover ? 'lab-preview on' : 'lab-preview'} aria-hidden="true">
-        {hover && <img src={hover.src(400)} alt="" />}
+        {hover && (hover.shots ? <Browser item={hover} shot={hover.shots[0]} w={800} /> : <img src={hover.src(400)} alt="" />)}
       </div>
     </section>
   );

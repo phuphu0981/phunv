@@ -112,7 +112,35 @@
     animation: gxScale .3s ease-out;
   }
   .gx-lightbox.closing .gx-detail { animation: gxScaleOut .3s ease-out forwards; }
-  .gx-detail img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 25px 70px rgba(0,0,0,.6); }
+  .gx-detail > img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 25px 70px rgba(0,0,0,.6); }
+
+  /* Screenshot window: thin bar with traffic lights and the host, warm rim light like the gold accents */
+  .browser {
+    border-radius: 10px; overflow: hidden; background: #0e0b09;
+    border: 1px solid rgba(242,238,233,.14);
+    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(0,0,0,.4), 0 0 60px -20px rgba(217,185,155,.35);
+  }
+  .browser-bar {
+    display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px;
+    background: linear-gradient(#26201b, #1c1713); border-bottom: 1px solid rgba(242,238,233,.08);
+  }
+  .browser-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(242,238,233,.18); }
+  .browser-bar i:first-child { background: #d9b99b; }
+  .browser-bar span {
+    flex: 1; max-width: 60%; margin: 0 auto; translate: -14px 0; padding: 3px 10px; border-radius: 99px; text-align: center;
+    font: 10px/1.4 monospace; letter-spacing: .06em; color: var(--muted); background: rgba(0,0,0,.35);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .browser img { display: block; width: 100%; height: auto; }
+
+  /* Two shots: the second window leans in front, bottom-right; padding reserves its overhang */
+  .gx-shots { position: relative; }
+  .gx-shots:has(> :nth-child(2)) { padding: 0 10% 20% 0; }
+  .gx-shots > :nth-child(2) {
+    position: absolute; right: 0; bottom: 0; width: 58%;
+    animation: shotIn .7s .2s cubic-bezier(.2,.7,.2,1) both;
+  }
+  @keyframes shotIn { from { opacity: 0; translate: 24px 24px; } }
   .gx-kind { font: 11px monospace; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
   .gx-info h2 { font: 400 clamp(32px, 4vw, 52px)/1 var(--serif); letter-spacing: -.02em; margin-bottom: 16px; }
   .gx-summary { font: italic 18px/1.4 var(--serif); color: var(--fg); margin-bottom: 20px; }
@@ -408,7 +436,8 @@
     transition: opacity .3s, scale .4s cubic-bezier(.2,.7,.2,1);
   }
   .lab-preview.on { opacity: 1; scale: 1; }
-  .lab-preview img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+  .lab-preview > img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+  .lab-preview:has(.browser) { width: 380px; aspect-ratio: auto; }
   @media (hover: hover) and (pointer: fine) { .lab-preview { display: block; } }
 
   /* ---------- 07 Archive ---------- */
@@ -514,7 +543,7 @@
     .gx-img { margin-bottom: 12px; }
     .gx-lightbox { padding: 72px 16px 32px; place-items: start center; }
     .gx-detail { grid-template-columns: 1fr; gap: 24px; }
-    .gx-detail img { aspect-ratio: 16 / 10; }
+    .gx-detail > img { aspect-ratio: 16 / 10; }
     .gx-info li, .case-text li { font-size: 16px; }
     .slide-inner, .work-stage { padding: calc(96px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom)); gap: 28px; }
     .about-inner { row-gap: 32px; align-content: start; padding: calc(96px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom)); }

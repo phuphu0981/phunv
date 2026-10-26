@@ -36,11 +36,14 @@ function About() {
     <section id="about" data-slide className="slide about">
       <div className="about-inner" data-depth>
         <Label n="02">{t.about}</Label>
-        <h2 className="about-statement">
-          {t.statement.map((line, i) => (
-            <span key={i} className="line"><span style={{ '--i': i }}><Rich parts={line} /></span></span>
-          ))}
-        </h2>
+        <div className="about-lead">
+          <h2 className="about-statement">
+            {t.statement.map((line, i) => (
+              <span key={i} className="line"><span style={{ '--i': i }}><Rich parts={line} /></span></span>
+            ))}
+          </h2>
+          <p className="about-bio rv" style={{ '--i': 3 }}>{t.bio}</p>
+        </div>
         <dl className="about-rows">
           {TIMELINE.map((row, i) => loc(row, lang)).map(({ label, title, place, period }, i) => (
             <div key={i} style={{ '--i': i + 3 }}>

@@ -276,6 +276,9 @@
   .about-statement .line > span { display: inline-block; transform: translateY(110%); }
   .in .about-statement .line > span { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(.15s + var(--i) * 90ms); }
 
+  .about-lead { align-self: start; }
+  .about-bio { margin-top: 32px; max-width: 34em; font-size: 17px; line-height: 1.65; color: #c9c2ba; }
+
   .about-rows { align-self: end; grid-row: 2 / 4; grid-column: 2; }
   .about-rows > div { position: relative; display: grid; grid-template-columns: minmax(72px, auto) 1fr auto; gap: 16px; align-items: baseline; padding: 18px 0; opacity: 0; }
   /* Hairline draws in left to right before each row fades up */
@@ -289,7 +292,7 @@
   @keyframes draw { to { transform: scaleX(1); } }
   .about-rows dt, .about-period { font: 11px monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
   .about-rows dd b { display: block; font: 400 22px/1.2 var(--serif); }
-  .about-rows dd span { font-size: 13px; color: var(--muted); }
+  .about-rows dd span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.5; color: var(--muted); }
   .about-stack { grid-column: 1; align-self: end; font: 12px monospace; letter-spacing: .08em; color: var(--muted); }
 
   /* ---------- 03 Selected work: sticky stage over one 100dvh snap step per case ---------- */

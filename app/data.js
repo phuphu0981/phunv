@@ -14,11 +14,24 @@ export const PROFILE = {
   stack: ['Magento 2', 'Laravel', 'Go', 'WordPress', 'GraphQL', 'Kafka', 'Docker'],
 };
 
-// About slide rows, newest first; `vi` overrides apply when Vietnamese is on (see loc in lang.js)
+// About slide rows: short- and long-term goals (the bio above them covers the current role); `vi` overrides apply when Vietnamese is on (see loc in lang.js)
 export const TIMELINE = [
-  { label: 'Now', title: 'Backend Developer', place: 'Magenest', period: '11/2025 —', vi: { label: 'Hiện tại', title: 'Lập trình Backend' } },
-  { label: 'Before', title: 'Backend Intern → Junior', place: 'HQ Group · CoreSys', period: '2025', vi: { label: 'Trước đó', title: 'Thực tập → Junior Backend' } },
-  { label: 'Study', title: 'B.Sc. Information Technology', place: 'UTT · GPA 3.6 / 4.0', period: '2022 —', vi: { label: 'Học vấn', title: 'Cử nhân CNTT' } },
+  {
+    label: 'Short term', title: 'End-to-end ownership', period: '1–2 yrs',
+    place: 'Lead Magento 2 and Go modules solo, from API design to production.',
+    vi: {
+      label: 'Ngắn hạn', title: 'Làm chủ trọn tính năng', period: '1–2 năm',
+      place: 'Tự dẫn dắt module Magento 2 và Go từ thiết kế API đến production.',
+    },
+  },
+  {
+    label: 'Long term', title: 'Commerce at scale', period: '3–5 yrs',
+    place: 'Own system design, performance and security for large commerce platforms.',
+    vi: {
+      label: 'Dài hạn', title: 'Thương mại quy mô lớn', period: '3–5 năm',
+      place: 'Vững thiết kế hệ thống, hiệu năng và bảo mật cho nền tảng thương mại lớn.',
+    },
+  },
 ];
 
 // Oldest first: the Experience helix carries them up one by one as the page scrolls down.
@@ -79,6 +92,7 @@ export const UI = {
     quote: [['Builds commerce and CMS backends in '], ['PHP and Go', true], [', from API design to production.']],
     about: 'About',
     statement: [[['Code that ships,']], [['holds up in production', true]], [['and explains itself.']]],
+    bio: 'I’m Phu, a backend developer in Ha Noi with nearly two years in PHP and Go. At Magenest I build Magento 2 modules, headless WordPress and Go microservices for clients. On the side I run my own store, Kerrax, live in production. I study IT at the University of Transport Technology, GPA 3.6 / 4.0.',
     work: 'Selected work', caseDetails: 'Details', architecture: 'How it works',
     experience: 'Experience',
     capabilities: 'Skills', capsTitle: [['Tools in '], ['daily use.', true]],
@@ -98,6 +112,7 @@ export const UI = {
     quote: [['Xây dựng backend thương mại điện tử và CMS bằng '], ['PHP và Go', true], [', từ thiết kế API đến production.']],
     about: 'Giới thiệu',
     statement: [[['Code lên production,']], [['chạy vững vàng,', true]], [['đọc vào là hiểu.']]],
+    bio: 'Tôi là Phú, lập trình viên backend tại Hà Nội với gần hai năm làm PHP và Go. Ở Magenest, tôi xây dựng module Magento 2, WordPress headless và microservice Go cho khách hàng. Ngoài giờ, tôi tự vận hành Kerrax, một shop đang chạy thật. Tôi đang học Cử nhân CNTT tại Đại học Công nghệ Giao thông Vận tải, GPA 3.6 / 4.0.',
     work: 'Dự án tiêu biểu', caseDetails: 'Chi tiết', architecture: 'Cách hoạt động',
     experience: 'Kinh nghiệm',
     capabilities: 'Kỹ năng', capsTitle: [['Công cụ '], ['dùng hằng ngày.', true]],
@@ -315,27 +330,6 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'E-Learning LMS', year: 2026, kind: 'Personal · Laravel + AI', img: 'aurora-fold',
-    summary: 'An online course platform where AI dubs lessons into three languages and writes the quizzes.',
-    points: [
-      'Structured the Laravel app as a modular monolith of 7 self-contained modules.',
-      'Built an AI audio pipeline: speech to text, translation and voice-over in English, French or Vietnamese.',
-      'Generated quizzes from subtitles with a local LLM, falling back to the cloud when needed.',
-      'Secured sign-in with 2FA and reCAPTCHA, and took payments through PayOS.',
-    ],
-    stack: ['Laravel 11', 'PHP 8.4', 'Redis', 'Python', 'Ollama'],
-    vi: {
-      kind: 'Cá nhân · Laravel + AI',
-      summary: 'Nền tảng học online, AI lồng tiếng bài giảng sang ba ngôn ngữ và tự soạn câu hỏi.',
-      points: [
-        'Tổ chức ứng dụng Laravel theo kiến trúc modular monolith gồm 7 module độc lập.',
-        'Xây dựng pipeline âm thanh AI: chuyển giọng nói thành chữ, dịch rồi lồng tiếng Anh, Pháp hoặc Việt.',
-        'Sinh câu hỏi trắc nghiệm từ phụ đề bằng LLM chạy local, có cloud dự phòng.',
-        'Bảo mật đăng nhập bằng 2FA và reCAPTCHA, thanh toán qua PayOS.',
-      ],
-    },
-  },
-  {
     title: 'Opaline Gazette', year: 2026, kind: 'Personal · Go GraphQL', img: 'eternal-glow', shots: ['web360'],
     summary: 'A headless news site that pulls articles from RSS feeds and is built to be found on Google.',
     points: [
@@ -435,17 +429,6 @@ export const PROJECTS = [
       kind: 'Cá nhân · Python',
       summary: 'Gom tin từ báo Việt Nam và báo Đức về một chỗ.',
       points: ['Thu thập tin từ VnExpress, Dân Trí, VietNamNet và Süddeutsche Zeitung, chạy song song nhiều luồng, lọc theo ngày đăng.'],
-    },
-  },
-  {
-    title: 'CodeBaseGo', year: 2026, kind: 'Personal · Go template', img: 'celestial-drift',
-    summary: 'A modular Go backend starter: one command scaffolds and registers a new module.',
-    points: ['Documented the six steps every request passes through, so it is clear where new code belongs.'],
-    stack: ['Go', 'Gin', 'Wire', 'gqlgen'],
-    vi: {
-      kind: 'Cá nhân · Go template',
-      summary: 'Bộ khung backend Go dạng module: một lệnh là tạo và đăng ký xong module mới.',
-      points: ['Ghi lại sáu bước mỗi request đi qua, nhìn vào là biết code mới đặt ở đâu.'],
     },
   },
 ].map((p) => ({ ...p, src: (w) => `/works/${p.img}-${w}.webp`, shot: (s, w) => `/shots/${s}-${w}.webp` }));

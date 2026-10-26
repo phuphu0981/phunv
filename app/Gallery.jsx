@@ -293,7 +293,7 @@ export function ProjectDetail({ item: raw, onClose }) {
           </div>
         ) : <img src={item.src(1200)} alt="" />}
         <div className="gx-info">
-          <p className="gx-kind">{item.kind} · {item.year}</p>
+          <p className="gx-kind">{item.kind} · {item.period || item.year}</p>
           <h2>{item.title}</h2>
           <p className="gx-summary">{item.summary}</p>
           <ul>{item.points.map((t, i) => <li key={i} style={{ '--i': i }}>{t}</li>)}</ul>

@@ -16,40 +16,58 @@ export const PROFILE = {
 
 // Oldest first: the Experience helix carries them up one by one as the page scrolls down.
 // metrics: [value, suffix, label]; counted up when the milestone comes into view
+// projects: [name, period] rows in the CV v2 order, so the Magenest stint reads like its CV table
 export const EXPERIENCE = [
   {
-    company: 'UTT', role: 'B.Sc. Information Technology', period: '2022 —',
+    company: 'UTT', role: 'B.Sc. Information Technology', period: '2022 – Present',
     line: 'University of Transport Technology. Holds a 3.6 / 4.0 GPA and earned the Excellent-grade scholarship in three semesters.',
     metrics: [[3.6, '', 'GPA / 4.0'], [3, '', 'scholarship semesters']],
     vi: {
       role: 'Cử nhân Công nghệ Thông tin',
+      period: '2022 – nay',
       line: 'Đại học Công nghệ Giao thông Vận tải. GPA 3.6 / 4.0, ba học kỳ giành học bổng loại Xuất sắc.',
       metrics: [[3.6, '', 'GPA / 4.0'], [3, '', 'kỳ học bổng']],
     },
   },
   {
-    company: 'CoreSys', role: 'Backend Developer — Laravel', period: '01/2025',
+    company: 'CoreSys', role: 'Backend Developer — PHP / Laravel', period: 'Jan – Apr 2025',
     line: 'Built coresyscompany.com on Laravel MVC, with Cloudinary media storage, automated emails and a content admin.',
     metrics: [],
-    vi: { line: 'Xây dựng coresyscompany.com trên Laravel MVC: lưu media trên Cloudinary, email tự động và trang quản trị nội dung.' },
+    vi: {
+      role: 'Lập trình viên Backend — PHP / Laravel',
+      period: '01/2025 – 04/2025',
+      line: 'Xây dựng coresyscompany.com trên Laravel MVC: lưu media trên Cloudinary, email tự động và trang quản trị nội dung.',
+    },
   },
   {
-    company: 'HQ Group', role: 'Backend Developer — Laravel', period: '02/2025 — 10/2025',
+    company: 'HQ Group', role: 'Backend Developer, Intern to Junior — Laravel', period: 'Apr – Dec 2025',
     line: 'Automated weekly reporting end to end and cut manual payroll work by 80%, with Laravel tools for KPIs, salaries and stock.',
     metrics: [[100, '%', 'weekly reports automated'], [80, '%', 'less manual payroll work']],
     vi: {
+      role: 'Lập trình viên Backend, Thực tập đến Junior — Laravel',
+      period: '04/2025 – 12/2025',
       line: 'Tự động hóa toàn bộ báo cáo tuần và cắt 80% thao tác tính lương bằng các công cụ Laravel cho KPI, lương và kho.',
       metrics: [[100, '%', 'báo cáo tuần tự động'], [80, '%', 'bớt thao tác tính lương']],
     },
   },
   {
-    company: 'Magenest', role: 'Backend Developer', period: '11/2025 — Now',
+    company: 'Magenest', role: 'Backend Developer', period: 'Dec 2025 – Present',
     line: 'Takes client modules from API design to production across Magento 2, headless WordPress and Go microservices.',
-    metrics: [[7, '', 'client projects'], [3, '', 'platforms']],
+    metrics: [],
+    projects: [
+      ['Vivy', 'Oct 2026 – Present'], ['Oroca', 'May 2026 – Present'], ['AI Cypher', 'Apr – Jul 2026'],
+      ['ACE Platform', 'Sep 2026 – Present'], ['Fulbright University', 'Aug 2026'], ['OpsCore', 'Sep 2026 – Present'],
+      ['Magento extensions', 'Jan – Jun 2026'],
+    ],
     vi: {
-      period: '11/2025 — nay',
-      line: 'Đưa module cho khách hàng từ thiết kế API đến production trên Magento 2, WordPress headless và microservice Go.',
-      metrics: [[7, '', 'dự án khách hàng'], [3, '', 'nền tảng']],
+      role: 'Lập trình viên Backend',
+      period: '12/2025 – nay',
+      line: 'Phát triển module cho khách hàng từ khâu thiết kế API đến production trên Magento 2, WordPress headless và microservice Go.',
+      projects: [
+        ['Vivy', '10/2026 – nay'], ['Oroca', '05/2026 – nay'], ['AI Cypher', '04/2026 – 07/2026'],
+        ['ACE Platform', '09/2026 – nay'], ['Đại học Fulbright', '08/2026'], ['OpsCore', '09/2026 – nay'],
+        ['Extension Magento', '01/2026 – 06/2026'],
+      ],
     },
   },
 ];
@@ -57,10 +75,10 @@ export const EXPERIENCE = [
 // [group, items]; group names are translated through UI.skillGroups
 export const SKILLS = [
   ['Languages', ['PHP', 'Go', 'TypeScript / JavaScript', 'Python']],
-  ['Backend', ['Magento 2 / Adobe Commerce', 'Laravel 11', 'WordPress (WPGraphQL)', 'Gin · GoFr', 'FastAPI', 'Node.js']],
+  ['Backend', ['Magento 2 / Adobe Commerce', 'Laravel', 'WordPress (WPGraphQL)', 'Gin · GoFr', 'FastAPI', 'Node.js']],
   ['APIs & Database', ['GraphQL · REST', 'MCP', 'MySQL · PostgreSQL', 'Redis', 'Kafka', 'Elasticsearch']],
   ['DevOps', ['Docker Compose', 'Nginx', 'Linux VPS', 'Cloudflare Tunnel']],
-  ['Frontend & AI', ['Next.js', 'React', 'Tailwind CSS', 'Claude Code']],
+  ['Frontend', ['Next.js', 'React', 'Tailwind CSS']],
 ];
 
 // UI copy. Rich lines are [text, emphasis] pairs so they can carry <em>/<b> without JSX here
@@ -74,14 +92,14 @@ export const UI = {
     about: 'About',
     statement: [[['Hi, I’m '], ['Phu.', true]]],
     bio: [
-      'I’m a backend developer in Ha Noi with nearly two years in PHP and Go. At Magenest I build Magento 2 modules, headless WordPress and Go microservices for clients.',
-      'I like systems that hold up in production and code the next person can read without asking. On the side I run my own store, Kerrax, so I get to own a product end to end: code, server, orders.',
+      'I’m a backend developer in Ha Noi with nearly two years building e-commerce and CMS systems in PHP (Magento 2, Laravel, WordPress) and Go. At Magenest I take client modules from API design to production.',
+      'I like systems that hold up in production and code the next person can read without asking. On the side I run my own products live, like Kerrax, a store I own end to end: code, server, orders.',
       'I’m studying IT at the University of Transport Technology (GPA 3.6 / 4.0). If you are building something in commerce, I’d love to hear about it.',
     ],
     work: 'Selected work', caseDetails: 'Details', architecture: 'How it works',
     experience: 'Experience',
     capabilities: 'Skills', capsTitle: [['Tools in '], ['daily use.', true]],
-    skillGroups: ['Languages', 'Backend', 'APIs & Database', 'DevOps', 'Frontend & AI'],
+    skillGroups: ['Languages', 'Backend', 'APIs & Database', 'DevOps', 'Frontend'],
     lab: 'Side projects',
     archive: 'All projects', projects: 'projects',
     archiveSub: 'Client work and side projects, some of them live. Drag to look around.',
@@ -98,14 +116,14 @@ export const UI = {
     about: 'Giới thiệu',
     statement: [[['Hi, mình là '], ['Phú.', true]]],
     bio: [
-      'Mình là lập trình viên backend ở Hà Nội, gần hai năm làm PHP và Go. Ở Magenest, mình xây module Magento 2, WordPress headless và microservice Go cho khách hàng.',
-      'Mình thích những hệ thống chạy bền trên production và code mà người sau đọc vào là hiểu. Ngoài giờ, mình tự vận hành Kerrax, một shop đang chạy thật, để làm chủ sản phẩm từ code, server đến đơn hàng.',
+      'Mình là lập trình viên backend ở Hà Nội, gần hai năm xây dựng hệ thống thương mại điện tử và CMS bằng PHP (Magento 2, Laravel, WordPress) và Go. Ở Magenest, mình phát triển module cho khách hàng từ khâu thiết kế API đến production.',
+      'Mình thích những hệ thống chạy bền trên production và code mà người sau đọc vào là hiểu. Ngoài giờ, mình tự vận hành các sản phẩm riêng đang chạy thật, như Kerrax, một shop mình làm chủ từ code, server đến đơn hàng.',
       'Mình đang học Cử nhân CNTT tại Đại học Công nghệ Giao thông Vận tải (GPA 3.6 / 4.0). Nếu bạn đang làm gì đó về thương mại điện tử, mình rất muốn được nghe.',
     ],
     work: 'Dự án tiêu biểu', caseDetails: 'Chi tiết', architecture: 'Cách hoạt động',
     experience: 'Kinh nghiệm',
     capabilities: 'Kỹ năng', capsTitle: [['Công cụ '], ['dùng hằng ngày.', true]],
-    skillGroups: ['Ngôn ngữ', 'Backend', 'API & Database', 'DevOps', 'Frontend & AI'],
+    skillGroups: ['Ngôn ngữ', 'Backend', 'API & Database', 'DevOps', 'Frontend'],
     lab: 'Dự án cá nhân',
     archive: 'Tất cả dự án', projects: 'dự án',
     archiveSub: 'Dự án khách hàng và dự án cá nhân, có sản phẩm đang chạy thật. Kéo để xem.',
@@ -120,7 +138,7 @@ export const UI = {
 // Featured cases show only their first three points on the Work slide, so the strongest go first
 export const PROJECTS = [
   {
-    title: 'Oroca B2B Commerce', featured: true, flow: ['Headless storefront', 'GraphQL', 'Magento 2.4.8', 'MySQL queues', 'Indexers'], year: 2026, kind: 'Magenest · Magento 2', img: 'obsidian-flow',
+    title: 'Oroca B2B Commerce', featured: true, flow: ['Headless storefront', 'GraphQL', 'Magento 2.4.8', 'MySQL queues', 'Indexers'], period: 'May 2026 – Present', year: 2026, kind: 'Magenest · Magento 2', img: 'obsidian-flow',
     summary: 'A Magento 2.4.8 store that sells to businesses and retail customers alike, with B2B checkout built on GraphQL.',
     points: [
       'Delivered B2B VAT invoicing over GraphQL, auto-filled from the buyer’s company account.',
@@ -131,6 +149,7 @@ export const PROJECTS = [
     ],
     stack: ['Magento 2.4.8', 'PHP 8.4', 'GraphQL', 'MySQL queues', 'dompdf'],
     vi: {
+      period: '05/2026 – nay',
       summary: 'Web bán hàng Magento 2.4.8 phục vụ cả doanh nghiệp lẫn khách lẻ, luồng thanh toán B2B chạy trên GraphQL.',
       points: [
         'Triển khai hóa đơn VAT B2B qua GraphQL, tự điền từ tài khoản công ty của khách.',
@@ -142,7 +161,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'AI Bought Together', featured: true, flow: ['Storefront events', 'Observers', 'CSV feed', 'AI engine', 'Recommendations'], year: 2026, kind: 'Magenest · AI Cypher', img: 'neon-mirage',
+    title: 'AI Bought Together', featured: true, flow: ['Storefront events', 'Observers', 'CSV feed', 'AI engine', 'Recommendations'], period: 'Apr – Jul 2026', year: 2026, kind: 'Magenest · AI Cypher', img: 'neon-mirage',
     summary: 'Engineered the “Frequently Bought Together” Magento module end to end, from storefront tracking to AI suggestions.',
     points: [
       'Exported session, cart and order data as a CSV feed for the AI recommender.',
@@ -152,6 +171,7 @@ export const PROJECTS = [
     ],
     stack: ['Magento 2', 'Cron', 'Message queue', 'Dead-letter queue', 'AI API'],
     vi: {
+      period: '04/2026 – 07/2026',
       summary: 'Phát triển trọn module Magento “Thường được mua cùng”, từ tracking trên storefront đến gợi ý bằng AI.',
       points: [
         'Xuất dữ liệu phiên, giỏ hàng và đơn hàng thành feed CSV cho AI gợi ý.',
@@ -162,7 +182,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'Vivy', year: 2026, kind: 'Magenest · Headless Magento', img: 'solar-veil',
+    title: 'Vivy', period: 'Oct 2026 – Present', year: 2026, kind: 'Magenest · Headless Magento', img: 'solar-veil',
     summary: 'A headless Magento 2.4.9 store whose GraphQL prices follow the daily Vietcombank USD rate.',
     points: [
       'Built the Vietcombank USD-rate module: daily cron sync, admin grid and prices served over GraphQL.',
@@ -171,6 +191,7 @@ export const PROJECTS = [
     ],
     stack: ['Magento 2.4.9', 'GraphQL', 'Cron', 'Cache tags'],
     vi: {
+      period: '10/2026 – nay',
       kind: 'Magenest · Magento headless',
       summary: 'Web bán hàng Magento 2.4.9 headless, giá trả qua GraphQL bám theo tỷ giá USD Vietcombank mỗi ngày.',
       points: [
@@ -181,7 +202,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'VietMap Service', year: 2026, kind: 'Magenest · Extension', img: 'lunar-echo',
+    title: 'VietMap Service', period: 'Jan – Jun 2026', year: 2026, kind: 'Magenest · Extension', img: 'lunar-echo',
     summary: 'A pluggable Magento map module: Vietmap and Goong sit behind one contract and swap in settings.',
     points: [
       'Designed one provider contract so Vietmap and Goong plug in side by side, chosen from admin.',
@@ -191,6 +212,7 @@ export const PROJECTS = [
     ],
     stack: ['Magento 2', 'DI / Strategy', 'Vietmap', 'Goong', 'RequireJS'],
     vi: {
+      period: '01/2026 – 06/2026',
       summary: 'Module bản đồ dạng plugin cho Magento: Vietmap và Goong dùng chung một contract, đổi ngay trong cài đặt.',
       points: [
         'Thiết kế một contract chung để Vietmap và Goong cắm song song, chọn nhà cung cấp từ admin.',
@@ -201,7 +223,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'Magento Extensions', year: 2026, kind: 'Magenest · Extensions', img: 'crystal-dawn',
+    title: 'Magento Extensions', period: 'Jan – Jun 2026', year: 2026, kind: 'Magenest · Extensions', img: 'crystal-dawn',
     summary: 'Kept Magenest’s Magento extensions secure and current on Magento 2.4.8 and PHP 8.4, from security patches to releases.',
     points: [
       'Closed 3DS account-takeover and forged-payment holes in Moneris Payment v2.5.2.',
@@ -212,6 +234,7 @@ export const PROJECTS = [
     ],
     stack: ['Magento 2.4.7 – 2.4.8', 'PHP 8.4', 'Moneris 3DS', 'Mailchimp Transactional'],
     vi: {
+      period: '01/2026 – 06/2026',
       summary: 'Giữ các extension Magento của Magenest an toàn và luôn chạy trên Magento 2.4.8, PHP 8.4, từ vá bảo mật đến phát hành.',
       points: [
         'Vá lỗ hổng chiếm tài khoản 3DS và giả mạo thanh toán trong Moneris Payment v2.5.2.',
@@ -223,7 +246,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'Fulbright Page Builder', featured: true, flow: ['Editors', 'WordPress + ACF', 'WPGraphQL', 'Page Builder', 'Next.js'], year: 2026, kind: 'Magenest · Headless WordPress', img: 'glass-reverie',
+    title: 'Fulbright Page Builder', featured: true, flow: ['Editors', 'WordPress + ACF', 'WPGraphQL', 'Page Builder', 'Next.js'], period: 'Aug 2026', year: 2026, kind: 'Magenest · Headless WordPress', img: 'glass-reverie',
     summary: 'Headless WordPress for Fulbright University Vietnam: editors build pages in WordPress, Next.js renders them.',
     points: [
       'Co-built the Page Builder backend: revisions, slug locks and rate limiting.',
@@ -234,6 +257,7 @@ export const PROJECTS = [
     ],
     stack: ['WordPress', 'WPGraphQL', 'ACF Pro', 'Polylang', 'Entra SSO', 'Next.js'],
     vi: {
+      period: '08/2026',
       summary: 'WordPress headless cho Đại học Fulbright Việt Nam: biên tập viên dựng trang trong WordPress, Next.js hiển thị.',
       points: [
         'Đồng phát triển backend Page Builder: lưu phiên bản, khóa slug và giới hạn tần suất.',
@@ -245,7 +269,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'OpsCore', year: 2026, kind: 'Magenest · WordPress', img: 'velvet-flux',
+    title: 'OpsCore', period: 'Sep 2026 – Present', year: 2026, kind: 'Magenest · WordPress', img: 'velvet-flux',
     summary: 'A company website on WordPress, built as a custom theme with dedicated site and leads plugins.',
     points: [
       'Built editable Elementor widgets and a case-study post type with filters.',
@@ -253,6 +277,7 @@ export const PROJECTS = [
     ],
     stack: ['WordPress', 'Elementor', 'PHP', 'Odoo CRM'],
     vi: {
+      period: '09/2026 – nay',
       summary: 'Website công ty trên WordPress, gồm theme riêng và hai plugin chuyên cho site và leads.',
       points: [
         'Tạo widget Elementor chỉnh được trong admin và post type case study có bộ lọc.',
@@ -261,7 +286,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'Search Service', featured: true, flow: ['Upstream service', 'Kafka', 'Go consumer', 'OpenSearch', 'Search API'], year: 2026, kind: 'Magenest · Go microservice', img: 'silent-orbit',
+    title: 'Search Service', featured: true, flow: ['Upstream service', 'Kafka', 'Go consumer', 'OpenSearch', 'Search API'], period: 'Sep 2026 – Present', year: 2026, kind: 'Magenest · Go microservice', img: 'silent-orbit',
     summary: 'A Go search service for the ACE platform that streams Kafka events into OpenSearch 2.19.',
     points: [
       'Built the Kafka consumer that keeps the OpenSearch index in step with upstream data.',
@@ -271,6 +296,7 @@ export const PROJECTS = [
     ],
     stack: ['Go', 'GoFr', 'Kafka', 'OpenSearch', 'PostgreSQL'],
     vi: {
+      period: '09/2026 – nay',
       summary: 'Dịch vụ tìm kiếm bằng Go cho nền tảng ACE, đưa sự kiện Kafka vào OpenSearch 2.19.',
       points: [
         'Xây dựng consumer Kafka giữ chỉ mục OpenSearch luôn khớp với dữ liệu nguồn.',
@@ -281,28 +307,12 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'SM Markets PWA', year: 2026, kind: 'Magenest · Adobe Commerce', img: 'prism-haze',
-    summary: 'A large Philippine grocery chain on Adobe Commerce and PWA Studio, with around 110 custom modules.',
-    points: [
-      'Revived the legacy PWA storefront on local machines so the whole team could build against it.',
-      'Documented about 200 legacy modules in short notes, so new developers get up to speed faster.',
-    ],
-    stack: ['Adobe Commerce', 'PWA Studio', 'UPWARD', 'React'],
-    vi: {
-      summary: 'Chuỗi siêu thị lớn ở Philippines chạy Adobe Commerce và PWA Studio, khoảng 110 module riêng.',
-      points: [
-        'Khôi phục storefront PWA cũ chạy được trên máy local để cả team phát triển tiếp.',
-        'Viết ghi chú ngắn cho khoảng 200 module cũ, giúp người mới nắm dự án nhanh hơn.',
-      ],
-    },
-  },
-  {
     title: 'Kerrax', link: 'https://kerrax.com', year: 2026, kind: 'Personal · Full stack', img: 'radiant-void',
     shots: ['preme', 'preme-product'],
     summary: 'A live store for digital and AI accounts, built and run solo, from database schema to VPS deploy.',
     points: [
       'Synced a multi-supplier catalog that auto-disables any item once its cost reaches the selling price.',
-      'Integrated bank QR payments, a Binance Pay USDT wallet, the order flow and admin accounting reports.',
+      'Built the order flow and admin accounting reports.',
       'Exposed a TypeScript MCP server so AI agents can look up products and orders.',
       'Self-hosted on a VPS with Docker Compose, Nginx and Cloudflare Tunnel, with written backup and restore runbooks.',
     ],
@@ -312,7 +322,7 @@ export const PROJECTS = [
       summary: 'Shop tài khoản số và AI đang chạy thật, một mình làm và vận hành, từ thiết kế database đến deploy VPS.',
       points: [
         'Đồng bộ catalog từ nhiều nhà cung cấp, tự tắt sản phẩm ngay khi giá vốn chạm giá bán.',
-        'Tích hợp thanh toán QR ngân hàng, ví USDT qua Binance Pay, luồng đơn hàng và báo cáo kế toán cho admin.',
+        'Xây dựng luồng đơn hàng và báo cáo kế toán cho admin.',
         'Cung cấp MCP server TypeScript để AI agent tra cứu sản phẩm và đơn hàng.',
         'Tự host trên VPS với Docker Compose, Nginx và Cloudflare Tunnel, có runbook sao lưu và khôi phục.',
       ],
@@ -355,19 +365,19 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'OpenDox', link: 'https://opendox.vercel.app/', year: 2026, kind: 'Personal · Document SaaS', img: 'solar-veil', shots: ['opendox'],
+    title: 'OpenDox', link: 'https://opendox.vercel.app/', year: 2026, kind: 'Personal · PDF tools', img: 'solar-veil', shots: ['opendox'],
     summary: 'Shipped 20+ PDF tools that run entirely in the browser, so files never leave the user’s device.',
     points: [
-      'Merge, split, sign, redact and protect PDFs with pdf.js and pdf-lib, without a single upload.',
-      'Built a FastAPI translation backend with OCR that keeps the original PDF or Word layout.',
+      'Kept files private: merge, split, sign, redact and protect PDFs with pdf.js and pdf-lib, without any upload.',
+      'Runs 100% in the browser with no backend, deployed on Vercel.',
     ],
-    stack: ['Next.js 15', 'pdf.js', 'pdf-lib', 'FastAPI', 'PaddleOCR'],
+    stack: ['Next.js 15', 'pdf.js', 'pdf-lib', 'Vercel'],
     vi: {
-      kind: 'Cá nhân · Document SaaS',
+      kind: 'Cá nhân · Công cụ PDF',
       summary: 'Ra mắt hơn 20 công cụ PDF chạy hoàn toàn trên trình duyệt, file không bao giờ rời máy người dùng.',
       points: [
-        'Gộp, tách, ký, che và khóa PDF bằng pdf.js và pdf-lib, không cần tải file lên server.',
-        'Xây dựng backend dịch tài liệu bằng FastAPI có OCR, giữ nguyên bố cục file PDF hoặc Word.',
+        'Bảo vệ dữ liệu: gộp, tách, ký, che và khóa PDF bằng pdf.js và pdf-lib, không cần tải file lên server.',
+        'Chạy hoàn toàn trên trình duyệt, không có backend, deploy trên Vercel.',
       ],
     },
   },
@@ -389,7 +399,7 @@ export const PROJECTS = [
     },
   },
   {
-    title: 'HQ Group Systems', year: 2025, kind: 'HQ Group · Laravel', img: 'velvet-flux',
+    title: 'HQ Group Systems', period: 'Apr – Dec 2025', year: 2025, kind: 'HQ Group · Laravel', img: 'velvet-flux',
     summary: 'Internal Laravel tools that automated reporting and payroll and kept stock in sync.',
     points: [
       'Automated 100% of weekly reports by syncing ClickUp tasks into a KPI dashboard.',
@@ -399,6 +409,7 @@ export const PROJECTS = [
     ],
     stack: ['Laravel', 'MySQL', 'ClickUp API'],
     vi: {
+      period: '04/2025 – 12/2025',
       summary: 'Bộ công cụ Laravel nội bộ tự động hóa báo cáo, tính lương và đồng bộ kho hàng.',
       points: [
         'Tự động hóa 100% báo cáo tuần bằng cách đồng bộ task ClickUp vào dashboard KPI.',

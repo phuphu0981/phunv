@@ -306,6 +306,7 @@
   .case.on .case-text > :nth-child(3) { animation-delay: .12s; }
   .case.on .case-text > :nth-child(4) { animation-delay: .18s; }
   .case.on .case-text > :nth-child(5) { animation-delay: .24s; }
+  .case-index .nw { white-space: nowrap; }
   .case-index { font: 11px monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
   .case h3 { font: 400 clamp(40px, 5vw, 80px)/.98 var(--serif); letter-spacing: -.025em; margin-bottom: 20px; }
   .case-summary { font: italic clamp(18px, 1.6vw, 22px)/1.4 var(--serif); color: var(--fg); margin-bottom: 20px; max-width: 34em; }
@@ -347,7 +348,9 @@
   }
   .exp-ms { position: relative; perspective: 1400px; }
   .ms {
-    position: absolute; left: 0; top: 50%; translate: 0 -50%; width: min(520px, 100%);
+    /* Centered with flex, not translate: the CSS minifier drops `translate` next to `transform` */
+    position: absolute; left: 0; top: 0; bottom: 0; width: min(520px, 100%);
+    display: flex; flex-direction: column; justify-content: center;
     opacity: 0; visibility: hidden; transform: translate3d(0, 9vh, -220px) rotateX(-12deg);
     transition: opacity .6s ease, visibility .6s, transform 1s cubic-bezier(.2,.7,.2,1);
   }
@@ -359,10 +362,16 @@
   .ms.on > :nth-child(3) { animation-delay: .16s; }
   .ms.on > :nth-child(4) { animation-delay: .24s; }
   .ms.on > :nth-child(5) { animation-delay: .32s; }
+  .ms.on > :nth-child(6) { animation-delay: .4s; }
   .ms-index { font: 11px monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
   .ms h3 { font: 400 clamp(48px, 6.4vw, 104px)/.95 var(--serif); letter-spacing: -.03em; margin-bottom: 14px; }
   .ms-role { font-size: 13px; letter-spacing: .04em; color: #d9b99b; margin-bottom: 14px; }
   .ms-line { font-size: 16px; line-height: 1.55; color: #c9c2ba; margin-bottom: 28px; max-width: 30em; }
+  .ms-projects { list-style: none; max-width: 30em; }
+  .ms-projects li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 7px 0; border-top: 1px solid rgba(242,238,233,.1); }
+  .ms-projects li:last-child { border-bottom: 1px solid rgba(242,238,233,.1); }
+  .ms-projects b { font-weight: 400; font-size: 15px; color: #c9c2ba; }
+  .ms-projects span { font: 11px monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
   .exp-metrics { display: flex; gap: 40px; }
   .exp-metrics strong { display: block; font: 400 clamp(40px, 4.4vw, 64px)/1 var(--serif); font-variant-numeric: tabular-nums; }
   .exp-metrics small { display: block; margin-top: 6px; font: 11px/1.4 monospace; color: var(--muted); max-width: 12em; }
@@ -387,7 +396,7 @@
 
   /* Portrait (phones, tablets upright): helix fills the top, milestone text sits on a fade at the bottom */
   @media (orientation: portrait) and (max-width: 1024px), (max-width: 800px) {
-    .ms { top: auto; bottom: 0; translate: none; }
+    .ms { top: auto; bottom: 0; }
     .exp-stage::after {
       content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 62%; pointer-events: none;
       background: linear-gradient(rgba(26,21,18,0), rgba(26,21,18,.92) 45%);
@@ -540,6 +549,11 @@
     .about-bio, .ms-role, .caps-grid li, .contact-meta { font-size: 16px; }
     .exp-content { padding: calc(96px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom)); }
     .ms h3 { font-size: clamp(44px, 13vw, 64px); }
+    /* Two columns of name-over-date cells keep the Magenest timeline clear of the helix on phones */
+    .ms-projects { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; }
+    .ms-projects li, .ms-projects li:last-child { flex-direction: column; gap: 2px; padding: 6px 0; border-bottom: 0; }
+    .ms-projects b { font-size: 16px; }
+    .ms-projects span { font-size: 10px; }
 
     .case-text ul { display: none; }
     .case h3 { font-size: clamp(36px, 10vw, 48px); }

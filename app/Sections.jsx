@@ -103,7 +103,7 @@ function Work({ onOpen }) {
           {FEATURED.map((item, i) => [item, loc(item, lang)]).map(([item, p], i) => (
             <article key={p.title} className={stepClass('case', i, active)} aria-hidden={i !== active}>
               <div className="case-text">
-                <p className="case-index">{String(i + 1).padStart(2, '0')} / {String(FEATURED.length).padStart(2, '0')} · {p.kind}</p>
+                <p className="case-index">{String(i + 1).padStart(2, '0')} / {String(FEATURED.length).padStart(2, '0')} · {p.kind} · <span className="nw">{p.period}</span></p>
                 <h3>{p.title}</h3>
                 <p className="case-summary">{p.summary}</p>
                 <ul>{p.points.slice(0, 3).map((t) => <li key={t}>{t}</li>)}</ul>
@@ -168,6 +168,11 @@ function Experience() {
                 <h3>{x.company}</h3>
                 <p className="ms-role">{x.role}</p>
                 <p className="ms-line">{x.line}</p>
+                {x.projects && (
+                  <ul className="ms-projects">
+                    {x.projects.map(([name, period]) => <li key={name}><b>{name}</b><span>{period}</span></li>)}
+                  </ul>
+                )}
                 {/* Mounted only while active so the counters replay on every visit */}
                 {i === active && x.metrics.length > 0 && (
                   <div className="exp-metrics">

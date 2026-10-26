@@ -42,12 +42,12 @@ b { font-weight: 600; color: var(--ink); }
 a { color: inherit; text-decoration: none; }
 
 header { padding-bottom: 8pt; margin-bottom: 8pt; border-bottom: 1.2pt solid var(--accent); }
-h1 { margin: 0; font-size: 20pt; line-height: 1.1; font-weight: 600; letter-spacing: .04em; color: var(--ink); }
+h1 { margin: 0; padding-top: 2pt; font-size: 23pt; line-height: 1.3; font-weight: 600; letter-spacing: .01em; color: var(--ink); }
 .title { margin: 3pt 0 6pt; font-size: 10pt; font-weight: 500; color: var(--accent); letter-spacing: .02em; }
-.contact { margin: 0; font-size: 8.2pt; color: var(--muted); }
+.contact { margin: 0; font-size: 8pt; color: var(--muted); }
 .contact .link { color: var(--text); font-weight: 400; }
-.contact .sep { color: var(--rule); margin: 0 4pt; }
-.summary { margin: 0; color: var(--text); }
+.contact .sep { color: var(--rule); margin: 0 3pt; }
+.summary { margin: 0; color: var(--text); text-align: justify; }
 
 h2 {
   display: flex; align-items: center; gap: 8pt;
@@ -72,7 +72,7 @@ li::before {
 .stack { color: var(--muted); }
 .link { color: var(--accent); font-weight: 500; }
 
-.skills li { display: grid; grid-template-columns: 25mm 1fr; padding-left: 0; margin-bottom: 1.2pt; }
+.skills li { display: grid; grid-template-columns: 29mm 1fr; padding-left: 0; margin-bottom: 1.2pt; }
 .skills li::before { display: none; }
 .nw { white-space: nowrap; }
 .page-break { break-before: page; }
@@ -135,7 +135,7 @@ def render(md):
     sep = '<span class="sep">|</span>'
     out = ['<header>', f'<h1>{html.escape(name.strip("*"))}</h1>',
            f'<p class="title">{inline(title)}</p>',
-           f'<p class="contact">{sep.join(inline(c) for c in contact.split(" · "))}</p>',
+           f'<p class="contact">{sep.join(f"<span class=nw>{inline(c)}</span>" for c in contact.split(" · "))}</p>',
            '</header>']
     out.append(f'<p class="summary">{inline(summary)}</p>')
     section = ''
@@ -163,7 +163,7 @@ def main():
     parts = re.split(r'^## .+$', SRC.read_text(), flags=re.M)[1:]
     OUT.mkdir(parents=True, exist_ok=True)
     for lang, md in zip(('en', 'vi'), parts):
-        doc = (f'<!doctype html><html lang="{lang}"><meta charset="utf-8"><title>Nguyen Van Phu — CV</title>'
+        doc = (f'<!doctype html><html lang="{lang}"><meta charset="utf-8"><title>Nguyễn Văn Phú — CV</title>'
                f'<link rel="stylesheet" href="{FONTS}"><style>{CSS}</style><body>{render(md)}</body></html>')
         with tempfile.NamedTemporaryFile('w', suffix='.html', delete=False) as f:
             f.write(doc)

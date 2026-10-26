@@ -56,10 +56,11 @@ export const EXPERIENCE = [
 
 // [group, items]; group names are translated through UI.skillGroups
 export const SKILLS = [
-  ['Commerce', ['Magento 2', 'Adobe Commerce', 'PWA Studio', 'Plugins & observers', 'Queues & indexers']],
-  ['Backend', ['PHP 8.4 · Laravel 11', 'Go · Gin · GoFr', 'Python · FastAPI', 'Node.js · MCP', 'REST · GraphQL']],
-  ['Data', ['MySQL', 'PostgreSQL', 'Redis', 'Kafka', 'OpenSearch']],
-  ['Ops & Quality', ['Docker Compose', 'Nginx · Linux VPS', 'Cloudflare Tunnel', 'GitLab CI · SonarQube', 'PHPStan · PHPCS']],
+  ['Languages', ['PHP', 'Go', 'TypeScript / JavaScript', 'Python']],
+  ['Backend', ['Magento 2 / Adobe Commerce', 'Laravel 11', 'WordPress (WPGraphQL)', 'Gin · GoFr', 'FastAPI', 'Node.js']],
+  ['APIs & Database', ['GraphQL · REST', 'MCP', 'MySQL · PostgreSQL', 'Redis', 'Kafka', 'Elasticsearch']],
+  ['DevOps', ['Docker Compose', 'Nginx', 'Linux VPS', 'Cloudflare Tunnel']],
+  ['Frontend & AI', ['Next.js', 'React', 'Tailwind CSS', 'Claude Code']],
 ];
 
 // UI copy. Rich lines are [text, emphasis] pairs so they can carry <em>/<b> without JSX here
@@ -80,7 +81,7 @@ export const UI = {
     work: 'Selected work', caseDetails: 'Details', architecture: 'How it works',
     experience: 'Experience',
     capabilities: 'Skills', capsTitle: [['Tools in '], ['daily use.', true]],
-    skillGroups: ['Commerce', 'Backend', 'Data', 'Ops & Quality'],
+    skillGroups: ['Languages', 'Backend', 'APIs & Database', 'DevOps', 'Frontend & AI'],
     lab: 'Side projects',
     archive: 'All projects', projects: 'projects',
     archiveSub: 'Client work and side projects, some of them live. Drag to look around.',
@@ -104,7 +105,7 @@ export const UI = {
     work: 'Dự án tiêu biểu', caseDetails: 'Chi tiết', architecture: 'Cách hoạt động',
     experience: 'Kinh nghiệm',
     capabilities: 'Kỹ năng', capsTitle: [['Công cụ '], ['dùng hằng ngày.', true]],
-    skillGroups: ['Thương mại điện tử', 'Backend', 'Dữ liệu', 'Vận hành & Chất lượng'],
+    skillGroups: ['Ngôn ngữ', 'Backend', 'API & Database', 'DevOps', 'Frontend & AI'],
     lab: 'Dự án cá nhân',
     archive: 'Tất cả dự án', projects: 'dự án',
     archiveSub: 'Dự án khách hàng và dự án cá nhân, có sản phẩm đang chạy thật. Kéo để xem.',

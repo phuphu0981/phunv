@@ -398,7 +398,7 @@
   }
 
   /* ---------- 05 Capabilities ---------- */
-  .caps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .caps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; }
   .caps-grid small { font: 11px monospace; color: var(--muted); }
   .caps-grid h3 { font: 400 28px/1.1 var(--serif); margin: 8px 0 16px; }
   .caps-grid ul { list-style: none; }

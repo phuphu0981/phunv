@@ -1,7 +1,7 @@
 # Kinh nghiệm trước khi vào Magenest — Nguyễn Văn Phú
 
 > Tổng hợp từ portfolio cũ: https://phuphu0981.github.io/myPortfolio.github.io/
-> Mốc thời gian: trước **11/2025** (ngày vào Magenest).
+> Mốc thời gian: trước **12/2025** (ngày vào Magenest).
 
 ## Thông tin chung
 
@@ -22,7 +22,7 @@
 
 ## Kinh nghiệm làm việc
 
-### 1. HQ Group Joint Stock Company — 02/2025 – 10/2025 (~9 tháng)
+### 1. HQ Group Joint Stock Company — 04/2025 – 12/2025 (~9 tháng)
 *Backend Developer — Intern / Junior (Laravel)*
 
 - **Hệ thống báo cáo tự động:** tích hợp ClickUp API với Laravel để đồng bộ task, xây dashboard KPI hiệu suất — tự động hóa 100% báo cáo tiến độ hằng tuần.
@@ -31,7 +31,7 @@
 - **Frontend:** chuyển wireframe/PSD thành HTML/CSS/JS responsive, bind dữ liệu động.
 - **Quy trình Agile/Scrum:** review spec cùng BA, phối hợp QA/Tester fix bug trước khi release.
 
-### 2. CoreSys Company — 01/2025
+### 2. CoreSys Company — 01/2025 – 04/2025
 *Backend Developer — PHP / Laravel*
 
 - Thiết kế & phát triển website giới thiệu doanh nghiệp theo kiến trúc MVC.
@@ -48,7 +48,7 @@
 - Gửi email tự động tới hộp thư người nhận.
 - Demo: https://letterlovemkdxx.free.nf/pass · Code: https://github.com/phuphu0981/LetterLoveV2
 
-### CoreSys Web Portal — 01/2025
+### CoreSys Web Portal — 01/2025 – 04/2025
 *PHP 8.x, Laravel, MySQL, MVC, Cloudinary API* — xem mục CoreSys ở trên.
 
 ## Kỹ năng (tại thời điểm trước Magenest)
@@ -61,11 +61,11 @@ Chỉ liệt kê kỹ năng có bằng chứng từ các công việc/dự án t
 - **Tích hợp API:** ClickUp API, Cloudinary API, mailer
 - **Công cụ & quy trình:** Git/GitHub, Postman, Jira, ClickUp, Agile/Scrum
 
-Portfolio còn liệt kê thêm: Python, Java, React.js, SQL Server, Docker, Linux/Nginx/SSL — không rõ đã dùng trong công việc nào trước 11/2025.
+Portfolio còn liệt kê thêm: Python, Java, React.js, SQL Server, Docker, Linux/Nginx/SSL — không rõ đã dùng trong công việc nào trước 12/2025.
 
 ## Tóm tắt nhanh
 
-- ~10 tháng kinh nghiệm Laravel trước Magenest (CoreSys 01/2025 + HQ Group 02–10/2025).
+- ~10 tháng kinh nghiệm Laravel trước Magenest (CoreSys 01–04/2025 + HQ Group 04–12/2025).
 - Thế mạnh: nghiệp vụ nội bộ doanh nghiệp (KPI, lương, kho), tích hợp API bên thứ ba, tự động hóa quy trình thủ công.
 - Có số liệu tác động cụ thể: 100% báo cáo tuần tự động, giảm 80% thao tác tính lương.
 
@@ -74,7 +74,7 @@ Portfolio còn liệt kê thêm: Python, Java, React.js, SQL Server, Docker, Lin
 ### Ghi chú khi phân tích portfolio
 
 - Các mục **sau** mốc vào Magenest nên tách riêng, không tính vào "trước Magenest":
-  - Magenest (11/2025 – nay): Magento 2, tích hợp VIETMAP/GOONG, tối ưu cart, AI Virtual Try-On.
+  - Magenest (12/2025 – nay): Magento 2, tích hợp VIETMAP/GOONG, tối ưu cart, AI Virtual Try-On.
   - E-Learning LMS (03–05/2026): Laravel 11 Modular Monolith, AI worker Python, PayOS, 2FA — https://e-learningg.click/
   - VN & DE News Crawler (06/2026): Python, BeautifulSoup — https://crawvnnews.onrender.com
 - Phần "Professional Summary" ghi *"1+ years enterprise experience"* và nhấn mạnh Magento 2/AI — đó là mô tả **hiện tại**, không phải trước Magenest.

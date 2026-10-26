@@ -1,7 +1,7 @@
 # Kinh nghiệm & kỹ năng tại Magenest — Nguyễn Văn Phú (phunv)
 
 > Tổng hợp từ các repo/thư mục trên máy làm việc (`/var/www/html`, `/home/phu`), dựa trên git log của tác giả `phunv` / `phunguyen204` và tài liệu tự viết.
-> Thời gian: **11/2025 – nay**. Commit sớm nhất tìm thấy trên máy: 04/2026 (code trước đó nằm ở repo không có trên máy).
+> Thời gian: **12/2025 – nay**. Commit sớm nhất tìm thấy trên máy: 04/2026 (code trước đó nằm ở repo không có trên máy).
 > Chỉ ghi nhận phần việc của chính mình; module do đồng nghiệp viết được ghi rõ là "không phải của tôi".
 
 ## Tóm tắt
@@ -45,7 +45,7 @@ Backend Developer đa nền tảng tại Magenest:
 
 `VirtualTryOn` (AI-070): validate SKU khi upload. *(Core VirtualTryOn, SizeChart, AiSizeRecommender, ProductFeed do đồng nghiệp viết.)*
 
-### 1.3 Magento Extension / Base project — m248 (04/2026 – 06/2026)
+### 1.3 Magento Extension / Base project — m248 (01/2026 – 06/2026)
 Magento 2.4.8-p4, PHP 8.4 — base project của phòng, mỗi module là 1 repo riêng.
 
 - **Magenest_AbandonedCart** 1.1.2 → 1.1.3 (M2_ABACAR-069, 72 file, +1293/-983): tương thích 2.4.8-p4 / PHP 8.4; thay SDK deprecated `mandrill/mandrill` bằng `mailchimp/transactional` (viết lại `MandrillConnector`, thêm `Tracking`); refactor tab rule admin (General, EmailChain, SMS), tracking click/email/restore, unsubscribe/resubscribe, guest capture.

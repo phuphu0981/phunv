@@ -14,26 +14,6 @@ export const PROFILE = {
   stack: ['Magento 2', 'Laravel', 'Go', 'WordPress', 'GraphQL', 'Kafka', 'Docker'],
 };
 
-// About slide rows: short- and long-term goals (the bio above them covers the current role); `vi` overrides apply when Vietnamese is on (see loc in lang.js)
-export const TIMELINE = [
-  {
-    label: 'Short term', title: 'End-to-end ownership', period: '1–2 yrs',
-    place: 'Lead Magento 2 and Go modules solo, from API design to production.',
-    vi: {
-      label: 'Ngắn hạn', title: 'Làm chủ trọn tính năng', period: '1–2 năm',
-      place: 'Tự dẫn dắt module Magento 2 và Go từ thiết kế API đến production.',
-    },
-  },
-  {
-    label: 'Long term', title: 'Commerce at scale', period: '3–5 yrs',
-    place: 'Own system design, performance and security for large commerce platforms.',
-    vi: {
-      label: 'Dài hạn', title: 'Thương mại quy mô lớn', period: '3–5 năm',
-      place: 'Vững thiết kế hệ thống, hiệu năng và bảo mật cho nền tảng thương mại lớn.',
-    },
-  },
-];
-
 // Oldest first: the Experience helix carries them up one by one as the page scrolls down.
 // metrics: [value, suffix, label]; counted up when the milestone comes into view
 export const EXPERIENCE = [
@@ -91,8 +71,12 @@ export const UI = {
     title: ['Backend', 'Developer'],
     quote: [['Builds commerce and CMS backends in '], ['PHP and Go', true], [', from API design to production.']],
     about: 'About',
-    statement: [[['Code that ships,']], [['holds up in production', true]], [['and explains itself.']]],
-    bio: 'I’m Phu, a backend developer in Ha Noi with nearly two years in PHP and Go. At Magenest I build Magento 2 modules, headless WordPress and Go microservices for clients. On the side I run my own store, Kerrax, live in production. I study IT at the University of Transport Technology, GPA 3.6 / 4.0.',
+    statement: [[['Hi, I’m '], ['Phu.', true]]],
+    bio: [
+      'I’m a backend developer in Ha Noi with nearly two years in PHP and Go. At Magenest I build Magento 2 modules, headless WordPress and Go microservices for clients.',
+      'I like systems that hold up in production and code the next person can read without asking. On the side I run my own store, Kerrax, so I get to own a product end to end: code, server, orders.',
+      'I’m studying IT at the University of Transport Technology (GPA 3.6 / 4.0). If you are building something in commerce, I’d love to hear about it.',
+    ],
     work: 'Selected work', caseDetails: 'Details', architecture: 'How it works',
     experience: 'Experience',
     capabilities: 'Skills', capsTitle: [['Tools in '], ['daily use.', true]],
@@ -111,8 +95,12 @@ export const UI = {
     title: ['Lập trình', 'Backend'],
     quote: [['Xây dựng backend thương mại điện tử và CMS bằng '], ['PHP và Go', true], [', từ thiết kế API đến production.']],
     about: 'Giới thiệu',
-    statement: [[['Code lên production,']], [['chạy vững vàng,', true]], [['đọc vào là hiểu.']]],
-    bio: 'Tôi là Phú, lập trình viên backend tại Hà Nội với gần hai năm làm PHP và Go. Ở Magenest, tôi xây dựng module Magento 2, WordPress headless và microservice Go cho khách hàng. Ngoài giờ, tôi tự vận hành Kerrax, một shop đang chạy thật. Tôi đang học Cử nhân CNTT tại Đại học Công nghệ Giao thông Vận tải, GPA 3.6 / 4.0.',
+    statement: [[['Hi, mình là '], ['Phú.', true]]],
+    bio: [
+      'Mình là lập trình viên backend ở Hà Nội, gần hai năm làm PHP và Go. Ở Magenest, mình xây module Magento 2, WordPress headless và microservice Go cho khách hàng.',
+      'Mình thích những hệ thống chạy bền trên production và code mà người sau đọc vào là hiểu. Ngoài giờ, mình tự vận hành Kerrax, một shop đang chạy thật, để làm chủ sản phẩm từ code, server đến đơn hàng.',
+      'Mình đang học Cử nhân CNTT tại Đại học Công nghệ Giao thông Vận tải (GPA 3.6 / 4.0). Nếu bạn đang làm gì đó về thương mại điện tử, mình rất muốn được nghe.',
+    ],
     work: 'Dự án tiêu biểu', caseDetails: 'Chi tiết', architecture: 'Cách hoạt động',
     experience: 'Kinh nghiệm',
     capabilities: 'Kỹ năng', capsTitle: [['Công cụ '], ['dùng hằng ngày.', true]],

@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { ProjectDetail, Browser } from './Gallery';
-import { PROFILE, TIMELINE, EXPERIENCE, SKILLS, PROJECTS } from './data';
+import { PROFILE, EXPERIENCE, SKILLS, PROJECTS } from './data';
 import { useLang, loc, Rich } from './lang';
 import { onFrame } from './scroll';
 
@@ -31,7 +31,7 @@ function Label({ n, children }) {
 }
 
 function About() {
-  const { lang, t } = useLang();
+  const { t } = useLang();
   return (
     <section id="about" data-slide className="slide about">
       <div className="about-inner" data-depth>
@@ -42,17 +42,10 @@ function About() {
               <span key={i} className="line"><span style={{ '--i': i }}><Rich parts={line} /></span></span>
             ))}
           </h2>
-          <p className="about-bio rv" style={{ '--i': 3 }}>{t.bio}</p>
+          <div className="about-bio">
+            {t.bio.map((p, i) => <p key={i} className="rv" style={{ '--i': i + 2 }}>{p}</p>)}
+          </div>
         </div>
-        <dl className="about-rows">
-          {TIMELINE.map((row, i) => loc(row, lang)).map(({ label, title, place, period }, i) => (
-            <div key={i} style={{ '--i': i + 3 }}>
-              <dt>{label}</dt>
-              <dd><b>{title}</b><span>{place}</span></dd>
-              <dd className="about-period">{period}</dd>
-            </div>
-          ))}
-        </dl>
         <p className="about-stack rv" style={{ '--i': 6 }}>{PROFILE.stack.join(' · ')}</p>
       </div>
     </section>
@@ -285,7 +278,7 @@ function Contact() {
           <span className="contact-arrow" aria-hidden="true">→</span>
         </a>
         <div className="contact-meta rv" style={{ '--i': 4 }}>
-          <a className="pill light cv" href={`/cv/nguyen-van-phu-cv-${lang}.pdf`} download>{t.downloadCv}</a>
+          <a className="pill light cv" href={`/cv/nguyen-van-phu-cv-${lang}-v2.pdf`} download>{t.downloadCv}</a>
           <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
           <a href={`https://zalo.me/${PROFILE.zalo}`} target="_blank" rel="noreferrer">Zalo {PROFILE.zalo.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3')} ↗</a>
           <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>

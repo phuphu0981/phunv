@@ -278,21 +278,8 @@
 
   .about-lead { align-self: start; }
   .about-bio { margin-top: 32px; max-width: 34em; font-size: 17px; line-height: 1.65; color: #c9c2ba; }
+  .about-bio p + p { margin-top: 1em; }
 
-  .about-rows { align-self: end; grid-row: 2 / 4; grid-column: 2; }
-  .about-rows > div { position: relative; display: grid; grid-template-columns: minmax(72px, auto) 1fr auto; gap: 16px; align-items: baseline; padding: 18px 0; opacity: 0; }
-  /* Hairline draws in left to right before each row fades up */
-  .about-rows > div::before {
-    content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(242,238,233,.18);
-    transform: scaleX(0); transform-origin: left;
-  }
-  .about-rows > div:last-child { border-bottom: 1px solid rgba(242,238,233,.18); }
-  .in .about-rows > div { animation: in .8s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(.15s + var(--i) * 90ms); }
-  .in .about-rows > div::before { animation: draw .9s cubic-bezier(.65,0,.35,1) both; animation-delay: calc(var(--i) * 90ms); }
-  @keyframes draw { to { transform: scaleX(1); } }
-  .about-rows dt, .about-period { font: 11px monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-  .about-rows dd b { display: block; font: 400 22px/1.2 var(--serif); }
-  .about-rows dd span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.5; color: var(--muted); }
   .about-stack { grid-column: 1; align-self: end; font: 12px monospace; letter-spacing: .08em; color: var(--muted); }
 
   /* ---------- 03 Selected work: sticky stage over one 100dvh snap step per case ---------- */
@@ -474,7 +461,7 @@
   /* Tablet: stacked layouts (AGENTS.md tablet range ends at 1024px) */
   @media (max-width: 1024px) {
     .about-inner { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 40px; align-content: center; }
-    .about-rows, .about-stack { grid-column: 1; grid-row: auto; }
+    .about-stack { grid-row: auto; }
     .about-statement { font-size: clamp(36px, 6.4vw, 64px); }
     .case { grid-template-columns: 1fr; align-content: center; gap: 32px; }
     .flow { justify-self: start; width: 100%; display: flex; flex-wrap: wrap; gap: 8px 6px; }
@@ -550,9 +537,7 @@
     .gx-info li, .case-text li { font-size: 16px; }
     .slide-inner, .work-stage { padding: calc(96px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom)); gap: 28px; }
     .about-inner { row-gap: 32px; align-content: start; padding: calc(96px + env(safe-area-inset-top)) 16px calc(32px + env(safe-area-inset-bottom)); }
-    .about-rows > div { grid-template-columns: minmax(56px, auto) 1fr; }
-    .about-period { grid-column: 2; margin-top: -10px; }
-    .about-rows dd span, .ms-role, .caps-grid li, .contact-meta { font-size: 16px; }
+    .about-bio, .ms-role, .caps-grid li, .contact-meta { font-size: 16px; }
     .exp-content { padding: calc(96px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom)); }
     .ms h3 { font-size: clamp(44px, 13vw, 64px); }
 
